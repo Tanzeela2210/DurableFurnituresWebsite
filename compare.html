@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="compare.css" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+<div class="left demo1 ">
+	
+	<table border="2">
+		<tr>
+			<td>
+				<h1 align="center">Product One</h1>
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<td>
+				<select id="op1" onChange="item_one()">
+					
+					<option>Select Any Mobile</option>
+					<option >LG</option>
+					<option >Oppo</option>
+					<option >Nokia</option>
+					
+				</select>
+				
+				
+			</td>
+		</tr>
+		
+		<tr>
+			<td><img src="images/" id="img1" height="450" width="450"></td>
+			
+			
+		</tr>
+		
+		<tr>
+			<td><input type="text" placeholder="Model No" readonly id="m1"></td>
+			
+		</tr>
+		
+		<tr>
+			<td><input type="text" placeholder="Price :" readonly id="p1"></td>
+			
+		</tr>
+		
+		
+		
+		<tr>
+			<td><textarea rows="5" cols="50" id="dsc1" readonly></textarea></td>
+			
+		</tr>
+		
+	</table>
+	
+</div>
+<div class="right demo1 ">
+	
+	<table border="2">
+		<tr>
+			<td>
+				<h1 align="center">Product One</h1>
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<td>
+				<select id="op2" onChange="item_two()">
+					
+					<option>Select Any Mobile</option>
+					<option>LG</option>
+					<option>Oppo</option>
+					<option>Nokia</option>
+					
+				</select>
+				
+			</td>
+		</tr>
+		
+		<tr>
+			<td><img src="Images/compare.jpg" id="img2" height="450" width="450"></td>
+			
+			
+		</tr>
+		
+		<tr>
+			<td><input type="text" placeholder="Model No" readonly id="m2"></td>
+			
+		</tr>
+		
+		<tr>
+			<td><input type="text" placeholder="Price :" readonly id="p2"></td>
+			
+		</tr>
+		
+		
+		
+		<tr>
+			<td><textarea rows="5" cols="50" id="dsc2" readonly></textarea></td>
+			
+		</tr>
+		
+	</table>
+	
+</div>
+</body>
+</html>
+
+<script src="js/jquery.js.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+
+function item_one()
+	{
+		var option_one = document.getElementById('op1').selectedIndex;
+		var option_two = document.getElementById('op2').selectedIndex;
+		
+		if(option_one== option_two)
+			{
+				
+				alert("Same Mobile Can Not be Compared");
+				document.getElementById('img1').src="Images/compare.jpg";
+				document.getElementById('m1').value= "";
+				document.getElementById('p1').value= "";
+				document.getElementById('dsc1').value="";
+				document.getElementById('img2').src="Images/compare.jpg";
+				document.getElementById('m2').value= "";
+				document.getElementById('p2').value= "";
+				document.getElementById('dsc2').value="";
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		if(option_one==1)
+			{
+				
+				document.getElementById('img1').src="Images/lg g5.jpg";
+				document.getElementById('m1').value= "Model No is : LG G5";
+				document.getElementById('p1').value= "Mobile Price is 69,000/-";
+				document.getElementById('dsc1').value="Fast battery charging (Quick Charge 3.0) \n- MP4/DviX/XviD/H.264/WMV player \n- MP3/WAV/FLAC/eAAC+/WMA player \n- Photo/video editor \n- Document editor";
+			}
+		
+		if(option_one==2)
+			{
+				
+				document.getElementById('img1').src="Images/oppo-f1-plus.jpg";
+				document.getElementById('m1').value= "Model No is : Oppo F1 Plus";
+				document.getElementById('p1').value= "Mobile Price is 39,000/-";
+				document.getElementById('dsc1').value="- Fast battery charging: 75% in 30 min (VOOC Flash Charge) \n- MP4/H.264 player \n- MP3/WAV/eAAC+/FLAC player \n- Document viewer \n- Photo/video editor";
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		if(option_one==3)
+			{
+				
+				document.getElementById('img1').src="Images/Nokia7plus_ROW_hero-phone.png";
+				document.getElementById('m1').value= "Model No is : Nokia 7Plus";
+				document.getElementById('p1').value= "Mobile Price is 49,000/-";
+				document.getElementById('dsc1').value="- Fast battery charging (18W, 9V/2A) \n- MP4/H.264 player \n- MP3/WAV/eAAC+/FLAC player \n- Photo/video editor \n- Document viewer";
+			}
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	function item_two()
+	{
+		var option_one = document.getElementById('op1').selectedIndex;
+		var option_two = document.getElementById('op2').selectedIndex;
+		
+		if(option_one== option_two)
+			{
+				
+				alert("Same Mobile Can Not be Compared");
+				document.getElementById('img1').src="Images/compare.jpg";
+				document.getElementById('m1').value= "";
+				document.getElementById('p1').value= "";
+				document.getElementById('dsc1').value="";
+				document.getElementById('img2').src="Images/compare.jpg";
+				document.getElementById('m2').value= "";
+				document.getElementById('p2').value= "";
+				document.getElementById('dsc2').value="";
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		if(option_two==1)
+			{
+				
+				document.getElementById('img2').src="Images/lg g5.jpg";
+				document.getElementById('m2').value= "Model No is : LG G5";
+				document.getElementById('p2').value= "Mobile Price is 69,000/-";
+				document.getElementById('dsc2').value="Fast battery charging (Quick Charge 3.0) \n- MP4/DviX/XviD/H.264/WMV player \n- MP3/WAV/FLAC/eAAC+/WMA player \n- Photo/video editor \n- Document editor";
+			}
+		
+		if(option_two==2)
+			{
+				
+				document.getElementById('img2').src="Images/oppo-f1-plus.jpg";
+				document.getElementById('m2').value= "Model No is : Oppo F1 Plus";
+				document.getElementById('p2').value= "Mobile Price is 39,000/-";
+				document.getElementById('dsc2').value="- Fast battery charging: 75% in 30 min (VOOC Flash Charge) \n- MP4/H.264 player \n- MP3/WAV/eAAC+/FLAC player \n- Document viewer \n- Photo/video editor";
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		if(option_two==3)
+			{
+				
+				document.getElementById('img2').src="Images/Nokia7plus_ROW_hero-phone.png";
+				document.getElementById('m2').value= "Model No is : Nokia 7Plus";
+				document.getElementById('p2').value= "Mobile Price is 49,000/-";
+				document.getElementById('dsc2').value="- Fast battery charging (18W, 9V/2A) \n- MP4/H.264 player \n- MP3/WAV/eAAC+/FLAC player \n- Photo/video editor \n- Document viewer";
+			}
+		
+	}
+</script>
+

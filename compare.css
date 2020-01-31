@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+
+.left
+{
+	float: left;
+	
+}
+
+.right
+{
+	
+	float: left;
+	
+}
+.demo1{float: left;}
+input
+{
+	width: 100%;
+	font-size: 25px;
+	
+}
+select
+{
+	
+	width: 100%;
+	font-size: 25px;
+}
+
+textarea
+{
+	width: 90%;
+	font-size: 25px;
+}

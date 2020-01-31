@@ -1,0 +1,454 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="D:\Tanzeela\Project\furniture website\furniture website\css\bootstrap.min.css">
+    <title>Document</title>
+    <style>
+    {
+  scroll-behavior: smooth;
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+div
+{
+	display: block;
+	position: relative;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul
+{
+	list-style: none;
+	margin-bottom: 0px;
+}
+a
+{
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+a, a:hover, a:visited, a:active, a:link
+{
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+a:hover
+{
+	color: deepskyblue;
+}
+::selection
+{
+	background: rgba(255, 165, 75, 1);
+	color: #FFFFFF;
+}
+img
+{
+	max-width: 100%;
+}
+.super_container
+{
+	width: 100%;
+	overflow: hidden;
+}
+
+/*********************************
+3. Header
+*********************************/
+
+.header
+{
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(22,29,74,0.75);
+	z-index: 100;
+	border-bottom: solid 3px orange;
+}
+.header_content
+{
+	width: 100%;
+}
+.main_nav_container_outer
+{
+	width: 100%;
+	height: 152px;
+}
+.header.scrolled .main_nav_container_outer
+{
+	height: 90px;
+}
+.header.scrolled .logo_container > div
+{
+	top: -40px;
+	width: 170px;
+}
+.header_bar
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(28,36,93,0.75);
+}
+.header_bar_content
+{
+	height: 40px;
+}
+  .header_links ul li:not(:last-of-type)::after
+{
+	display: inline-block;
+	content: '|';
+	margin-left: 8px;
+	margin-right: 8px;
+	font-size: 1200px;
+	font-weight: 500;
+	color: deepskyblue;
+}
+.header_links ul li a
+{
+	font-size: 12px;
+	font-weight: 500;
+	color: #FFFFFF;
+}
+.header_links ul li:first-child a
+{
+	color: #ffa54b;
+}
+.header_links ul li a:hover
+{
+	color: #ffa54b;
+}
+.user_area
+{
+	margin-left: 48px;
+}
+.user_area ul li a
+{
+	font-size: 12px;
+	font-weight: 500;
+	color: #FFFFFF;
+}
+.user_area ul li a:hover
+{
+	color: deepskyblue;
+}
+
+.main_nav
+{
+	width: 100%;
+	padding-bottom: 16px;
+}
+.main_nav_container > div:not(:nth-child(2))
+{
+	width: calc((100% - 310px) / 2);
+}
+.main_nav ul li:not(:last-of-type)
+{
+	margin-right: 38px;
+}
+.main_nav ul li:nth-child(3)
+{
+	margin-right: 0;
+}
+.main_nav ul li a
+{
+	font-size: 16px;
+	font-weight: 700;
+	color: #FFFFFF;
+	text-transform: uppercase;
+}
+.main_nav ul li a:hover,
+.main_nav ul li.active a
+{
+	color: deepskyblue;
+}
+.main_nav_container .header_live
+{
+	display: none;
+}
+.logo_container
+{
+	width: 310px;
+	margin-right: 0px;
+}
+.logo_container a
+{
+	display: block;
+	position: relative;
+	width: 100%;
+}
+.logo_container > div
+{
+	position: absolute;
+	top: -60px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	width: 100%;
+	text-align: center;
+}
+.hamburger
+{
+	display: none;
+	position: absolute;
+	bottom: 15px;
+	right: 0px;
+	cursor: pointer;
+}
+.hamburger i
+{
+	font-size: 22px;
+	color: #FFFFFF;
+}
+.hamburger:hover i
+{
+	color: deepskyblue;
+}
+
+/*********************************
+4. Menu
+*********************************/
+
+.menu
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(10,17,35,0.55);
+	z-index: 101;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+}
+.menu.active
+{
+	visibility: visible;
+	opacity: 1;
+}
+.menu_background
+{
+	position: absolute;
+	top: 0;
+	right: -65%;
+	width: 65%;
+	height: 100%;
+	background-color: rgba(25,21,61,0.80);
+	padding-right: 93px;
+	border-left: solid 2px #ffa54b;
+	transform-origin: bottom right;
+	-webkit-transform: skew(-12deg);
+	-moz-transform: skew(-12deg);
+	-ms-transform: skew(-12deg);
+	-o-transform: skew(-12deg);
+	transform: skew(-12deg);
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+}
+.menu.active .menu_background
+{
+	right: 0%;
+}
+.menu_container
+{
+	width: 100%;
+	height: 100%;
+	padding-right: 40px;
+	padding-top: 124px;
+	-webkit-transform: skew(12deg);
+	-moz-transform: skew(12deg);
+	-ms-transform: skew(12deg);
+	-o-transform: skew(12deg);
+	transform: skew(12deg);
+}
+.menu_close
+{
+	position: absolute;
+	top: 19px;
+	right: 40px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.menu_nav ul li
+{
+	-webkit-transform: translateX(100px);
+	-moz-transform: translateX(100px);
+	-ms-transform: translateX(100px);
+	-o-transform: translateX(100px);
+	transform: translateX(100px);
+	opacity: 0;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+.menu_nav ul li:first-of-type
+{
+	-webkit-transition-delay: 100ms;
+	transition-delay: 100ms;
+}
+.menu_nav ul li:nth-child(2)
+{
+	-webkit-transition-delay: 170ms;
+	transition-delay: 170ms;
+}
+.menu_nav ul li:nth-child(3)
+{
+	-webkit-transition-delay: 240ms;
+	transition-delay: 240ms;
+}
+.menu_nav ul li:nth-child(4)
+{
+	-webkit-transition-delay: 310ms;
+	transition-delay: 310ms;
+}
+.menu_nav ul li:nth-child(5)
+{
+	-webkit-transition-delay: 380ms;
+	transition-delay: 380ms;
+}
+.menu_nav ul li:nth-child(6)
+{
+	-webkit-transition-delay: 450ms;
+	transition-delay: 450ms;
+}
+.menu.active .menu_nav ul li
+{
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+	opacity: 1;
+}
+.menu_nav ul li a
+{
+	font-size: 24px;
+	color: #FFFFFF;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+.menu_nav ul li a:hover,
+.menu_close:hover
+{
+	color: deepskyblue;
+}
+
+	    
+#txt
+	   {
+		   font-family: 'Bitter', serif;
+		   font-size: 4em;
+		   transform: translate(-5%,-5%);
+		   color:black;
+		   text-shadow:0 0 7px orange;
+		   letter-spacing:5px; 
+	   }
+		
+		 #txt1
+	   {
+		   font-family: 'Bitter', serif;
+		   font-size: 4em;
+		   transform: translate(-5%,-5%);
+		   color:black;
+		   text-shadow:0 0 7px orange;
+		   letter-spacing:5px; 
+	   }
+	
+		#txt2
+	   {
+		   font-family: 'Bitter', serif;
+		   font-size: 4em;
+		   transform: translate(-5%,-5%);
+		   color:black;
+		   text-shadow:0 0 7px orange;
+		   letter-spacing:5px; 
+	   }
+		
+    </style>
+</head>
+<body>
+    <div class="super_container bg-light">
+	
+        <!-- Header -->
+    
+        <header class="header">
+    
+            <!-- Header Content -->
+            <div class="header_content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="main_nav_container_outer d-flex flex-row align-items-end justify-content-center trans_400">
+                                <nav class="main_nav">
+                            <div class="main_nav_container d-flex flex-row align-items-center justify-content-lg-start justify-content-center">
+                                        <div>
+                                            <!-- Header LIVE -->
+                                            <div class="header_live">
+                                            </div>
+                                            
+                                <ul class="d-flex flex-row align-items-start justify-content-end">
+                               <li class=""><a href="../Index_page/index.html">Home</a></li>
+                                               <li class="nav-item dropdown"><a href="../Sports/Sports.html">Sports</a></li>
+                                               <li><a href="../Gallery/Gallery.html">Gallery</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="logo_container text-center"><div class="trans_400"><a href="#"><img src="./images/logoo.png" alt=""></a></div></div>
+                                        <div>
+                                            <ul class="d-flex flex-row align-items-start justify-content-start">
+                                                <li><a href="../About Us/About.html">About Us</a></li>
+                                                <li><a href="../Contact US/Contact.html">Contact Us</a></li>
+                                                <li><a href="../Feedback/Feedback.html">Feedback</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                                <div class="hamburger">
+                                    <i class="fa fa-bars trans_200"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+    
+            </div>
+    
+        </header>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam repellendus aliquid, explicabo asperiores nobis, aperiam dignissimos voluptatum odit, non quasi placeat? Tempora corrupti amet eligendi maxime in. Voluptatem consectetur doloribus repellendus quisquam nostrum deleniti repudiandae, nemo consequuntur amet impedit eum itaque eius velit fuga harum maxime iure nisi sint distinctio commodi laudantium, porro eaque officia ut! Facere alias quis est iure dolorem labore ipsa natus repudiandae delectus quidem quasi sequi officiis, necessitatibus neque optio, perferendis magni? Maiores quae consectetur repellendus ex omnis laborum quaerat natus reiciendis ea nostrum commodi quas suscipit laboriosam expedita vitae, est corporis placeat aliquid praesentium voluptatum quo cupiditate dolores. Officia, modi saepe quisquam ea non incidunt ducimus odit vel mollitia molestiae facilis harum laboriosam maxime id officiis nisi omnis dolor eaque quasi voluptatibus sit voluptatum consectetur porro! Minima soluta assumenda quam alias itaque ut quasi, corporis odio aut praesentium est, harum ipsum delectus labore impedit quos maxime illo neque, nulla dolorum quas rerum explicabo quisquam? Excepturi ut non tempora nulla incidunt velit, accusantium aliquam omnis fugiat porro exercitationem praesentium. Eveniet consequuntur corporis, ullam consequatur praesentium maxime laborum iste odit nihil at hic, dolor facere repudiandae sed sapiente doloribus ratione quaerat fugiat assumenda est maiores. Maxime explicabo, ex odio id, iusto blanditiis optio atque quas laboriosam autem illo animi nam iure ipsam dolor quod sequi distinctio rerum. Quo enim, animi, molestias expedita et, excepturi vel ipsum delectus illo aliquid commodi iusto aut officia eum sint at ab quisquam impedit eos repellat itaque esse quidem. Magnam dolorem mollitia hic voluptates incidunt voluptate autem commodi saepe provident quidem quos voluptatum architecto vitae similique, labore minus tempore ex sequi optio eveniet! Mollitia saepe accusantium tempora alias blanditiis sed corporis, ut officia vel vitae iure neque fugit, placeat quia ea asperiores deleniti eveniet nesciunt! Neque quibusdam, enim modi mollitia maiores qui doloremque ratione nisi officia quod ut suscipit repudiandae inventore laudantium deleniti sapiente repellat nam necessitatibus, ipsum quae quam molestias quidem. Consequuntur ducimus ab alias quas expedita dolorem. Atque dolore at, quibusdam labore nulla aliquam pariatur voluptates repellat! Nostrum reiciendis iste aperiam numquam velit ullam sapiente laudantium. Accusantium ratione libero, nihil ipsam commodi laboriosam enim voluptates quibusdam porro, corporis odio ipsa nam rem soluta reiciendis sequi? Consectetur corporis tempora, provident culpa perspiciatis inventore accusamus cumque nihil placeat unde recusandae maiores incidunt sequi dignissimos sunt sit nam voluptates molestiae mollitia deleniti libero facere temporibus assumenda? Voluptate nemo quae, odit reiciendis atque placeat nam facilis ea aliquam sequi consectetur perferendis explicabo, aperiam pariatur hic enim esse. Doloribus sunt vel dicta quisquam commodi iusto est fugit dolorem ut? Rem ducimus perferendis voluptatum quas, dolorem rerum a mollitia esse ratione excepturi praesentium minus accusantium nihil omnis? Animi nemo necessitatibus exercitationem maiores debitis atque accusamus voluptatibus impedit pariatur sint quasi error quisquam autem molestiae inventore, perferendis reiciendis quaerat qui. Exercitationem minus quae reiciendis, architecto libero assumenda. Laboriosam, accusantium. Ullam iure, quia ducimus explicabo sequi harum ipsam a iusto nulla distinctio nobis ipsa quae magni praesentium consequatur nihil repellendus voluptatum molestias mollitia dolores deserunt possimus, incidunt, nesciunt at. Magnam, quas temporibus! Laborum ipsam rerum et molestias assumenda amet cupiditate aperiam aut doloribus asperiores tenetur, similique, repellat quidem excepturi earum. Ratione nisi accusantium quam neque tempore, omnis nemo iste repellendus reprehenderit suscipit porro quidem ipsa dolores ab quaerat illum vitae nostrum quas similique in animi dignissimos! Dolores ducimus odit quaerat hic temporibus nihil enim quisquam placeat rerum consequuntur saepe obcaecati atque rem in asperiores ipsum aliquid qui omnis corporis tempora deserunt reprehenderit illum, ullam facilis! Possimus, quam accusantium ex iste, similique deserunt quibusdam, asperiores dolore neque nemo natus odio placeat maxime impedit corrupti esse eum aut ratione labore delectus! At aperiam ipsa nesciunt nisi, in minus molestias rem eius culpa porro, architecto consequatur modi ratione. Corrupti debitis placeat similique corporis maxime voluptatum eos, velit eaque eveniet dolorum aperiam quam aut illo, dolorem sequi maiores at ipsa hic nam repellendus dicta. Nemo quo numquam omnis praesentium sapiente maxime ipsum! Molestias voluptatum veniam labore reprehenderit cumque amet temporibus ipsum cupiditate ducimus obcaecati officiis inventore voluptatem dolorum quod et quasi corrupti dolor odit, velit optio tenetur dicta dignissimos ipsam quia! Ipsa exercitationem ducimus corrupti, necessitatibus earum officiis dolorem. Reiciendis temporibus ea voluptatem eveniet neque dolorum nemo itaque veniam laborum, inventore quod quaerat? Rerum cupiditate laudantium magnam repudiandae expedita asperiores ipsum consectetur, ipsa veritatis earum deserunt. In quam unde, reprehenderit autem saepe perspiciatis! Quibusdam harum adipisci nihil doloremque officia tempore sunt? Iste molestiae animi, et, ducimus ratione neque ex, error a eaque autem eius repudiandae molestias dolore pariatur magni optio dolorum dolorem saepe blanditiis! Porro repellendus quia quisquam laudantium dolores natus amet odio pariatur, blanditiis, quis eveniet ab est ea? Autem blanditiis modi perferendis omnis eius accusantium laudantium quo exercitationem, natus, temporibus cupiditate iste, vel eaque quam tempora aperiam reprehenderit error quibusdam. Eaque repellendus assumenda, dignissimos eligendi, officiis voluptate quibusdam blanditiis corrupti facere, perspiciatis quae similique dolore. Fugiat voluptatem obcaecati, accusantium, porro voluptate accusamus ipsam optio in tenetur aliquam numquam incidunt est quae amet quam consequatur, dolore quia voluptatibus ad? Libero, at. Amet eius, nobis blanditiis deleniti fugiat quo quae et! Itaque in repellendus, voluptates sunt harum earum architecto veniam porro accusantium maxime fugit ad soluta obcaecati quisquam, veritatis enim iste! Nostrum incidunt ipsam, eligendi ad soluta eveniet hic, iure laborum neque cumque cupiditate perferendis, ratione dignissimos? Consequuntur laudantium error quidem quaerat numquam? Ea architecto voluptatum minus saepe laboriosam maxime pariatur dignissimos culpa et consequuntur voluptate vero deserunt tempora neque sit unde repellendus, modi voluptas temporibus possimus odio fugit cum voluptatibus quisquam! Cupiditate pariatur asperiores sequi ducimus esse incidunt, quidem, tenetur alias suscipit excepturi nam quisquam labore provident nostrum natus? Eveniet, ducimus quisquam quam excepturi ad beatae qui eius facilis? Pariatur, officiis possimus placeat deleniti at expedita hic, labore voluptate tenetur amet eligendi reprehenderit cum aliquam neque laboriosam doloremque aperiam dicta! Consequuntur quo nemo beatae soluta, perspiciatis sint maiores vel deleniti quod nihil nesciunt eius tempore facere nam ipsam magni corporis, consectetur porro totam provident in molestias consequatur maxime ex! Fuga reiciendis obcaecati optio repudiandae praesentium ut vitae odit aliquam minus delectus.</p>
+</body>
+<script>D:\Tanzeela\Project\furniture website\furniture website\js\jquery.js.js</script>
+<script>D:\Tanzeela\Project\furniture website\furniture website\js\bootstrap.min.js</script>
+</html>
